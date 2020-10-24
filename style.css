@@ -1,0 +1,129 @@
+*,
+::before,
+::after{
+  margin:0;
+  padding:0;
+}
+
+body {
+    font-size: 15pt;
+    font-family: "Libre Franklin",sans-serif;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
+    align-items:center;
+    background:rgb(0,0,0);
+}
+
+.player{
+  width:100%;
+  height:100vh;
+  background-size:cover;
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-flow:column wrap;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+
+.player::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.4);
+  z-index:-1;
+  animation-name:musicc;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes musicc{
+  0%{
+    background:rgba(0,0,0,.4);
+  }
+  50%{
+    background:rgba(0,0,0,.6);
+  }
+  75%{
+    background:rgba(0,0,0,.8);
+  }
+  100%{
+    background:rgb(0,0,0);
+  }
+}
+
+.player #time{
+  font-size:14px;
+  padding-bottom:10px;
+}
+
+.player .btn{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  text-align: center;
+  border:none;
+  color:#FFFFFF;
+  outline:0;
+  background:none;
+  border:3px solid #FFFFFF;
+  transition: all 400ms;
+}
+
+.player .btn:hover{
+  transform:scale(0.8);
+  opacity:.4;
+}
+
+.player #music-name{
+  font-size:20px;
+}
+
+.popup{
+  width:150px;
+  height:40px;
+  display:flex;
+  line-height:40px;
+  font-weight:bold;
+  color:#FFFFFF;
+  border-radius:20px;
+  border:3px solid white;
+  font-size:12px;
+  justify-content: center;
+  position:fixed;
+  z-index:3;
+  bottom:10px;
+  opacity:.4;
+  transition:all 350ms;
+}
+
+.popup:hover{
+  opacity:1;
+  transform:scale(.8);
+  border-radius:20px 10px 10px 0px;
+}
+
+.popup span{
+  font-weight:400;
+}
+
+@media only screen and (max-width:375px){
+  .player{
+    width:100%;
+  }
+  
+  .popup{
+    justify-self: center;
+  }
+}
+
+
+
+
+
